@@ -3,1195 +3,709 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="刘天骄 · 产品运营/电商运营 · 个人作品集">
-<title>刘天骄 Tianjiao Liu · Portfolio</title>
+<meta name="description" content="刘天骄 · 产品运营 × 电商运营 · vibecoded with AI 🍜">
+<title>刘天骄 Tianjiao · Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;600;700;900&family=Noto+Serif+SC:wght@400;500;600;700;900&family=Gamja+Flower&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   CSS CUSTOM PROPERTIES
+   DESIGN SYSTEM
+   Aesthetic: Vibecoding × 萌系 × Warm Editorial
    ============================================================ */
 :root{
-  --cream:        #FBF7F0;
-  --cream-rgb:    251,247,240;
-  --paper:        #FFFCF8;
-  --paper-rgb:    255,252,248;
-  --espresso:     #2C2420;
-  --espresso-rgb: 44,36,32;
-  --mud:          #6B5F58;
-  --mud-rgb:      107,95,88;
-  --stone:        #9E948C;
-  --terracotta:   #C2704F;
-  --terracotta-rgb:194,112,79;
-  --terracotta-dark:#A55638;
-  --amber:        #D4956A;
-  --amber-rgb:    212,149,106;
-  --amber-light:  #F5E6D8;
-  --amber-light-rgb:245,230,216;
-  --sage:         #9CAFA6;
-  --border:       #E8E2DA;
-  --border-light: #F0EBE4;
-  --radius:       14px;
-  --radius-lg:    22px;
-  --max-w:        1120px;
-  --nav-h:        68px;
+  --cream:       #FFFBF5;
+  --cream-rgb:   255,251,245;
+  --paper:       #FFFFFF;
+  --ink:         #3C2A24;
+  --ink-rgb:     60,42,36;
+  --mud:         #7A6B63;
+  --mud-rgb:     122,107,99;
+  --stone:       #B0A49C;
 
-  /* Typography scale */
-  --fs-hero:      clamp(3.4rem, 7.5vw, 6.2rem);
-  --fs-h1:        clamp(2.4rem, 4.5vw, 3.6rem);
-  --fs-h2:        clamp(1.6rem, 2.8vw, 2.2rem);
-  --fs-h3:        clamp(1.2rem, 1.8vw, 1.5rem);
-  --fs-body:      1rem;
-  --fs-sm:        0.875rem;
-  --fs-xs:        0.78rem;
+  --coral:       #E8815D;
+  --coral-rgb:   232,129,93;
+  --coral-deep:  #D06842;
+  --peach:       #F4A88A;
+  --peach-rgb:   244,168,138;
+  --peach-light: #FDF0E8;
+  --peach-light-rgb:253,240,232;
 
-  --ease-out-expo: cubic-bezier(0.19,1,0.22,1);
-  --ease-out-back: cubic-bezier(0.34,1.56,0.64,1);
+  --honey:       #E8B44F;
+  --honey-rgb:   232,180,79;
+  --honey-light: #FEF8E8;
+  --honey-light-rgb:254,248,232;
+
+  --matcha:      #8CAF7D;
+  --matcha-rgb:  140,175,125;
+  --matcha-light:#F2F7EF;
+  --matcha-light-rgb:242,247,239;
+
+  --sky:         #7BA7C9;
+  --sky-rgb:     123,167,201;
+  --sky-light:   #EDF4F9;
+  --sky-light-rgb:237,244,249;
+
+  --border:      #F0EAE2;
+  --border-soft: #F6F2EB;
+
+  --radius-sm:   14px;
+  --radius-md:   20px;
+  --radius-lg:   28px;
+  --radius-xl:   36px;
+
+  --max-w:       1080px;
+  --nav-h:       68px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.03), 0 4px 16px rgba(0,0,0,0.04);
+  --shadow-hover:0 2px 8px rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.07);
+  --shadow-btn:  0 4px 18px rgba(var(--coral-rgb),0.28);
+
+  --ease: cubic-bezier(0.22,1,0.36,1);
+  --spring: cubic-bezier(0.34,1.56,0.64,1);
 }
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 24px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 20px)}
 body{
-  font-family:'Noto Sans SC','Cormorant Garamond',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-family:'Noto Sans SC',-apple-system,BlinkMacSystemFont,sans-serif;
   background:var(--cream);
-  color:var(--espresso);
-  line-height:1.75;
+  color:var(--ink);
+  line-height:1.78;
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
-
-/* Subtle grain overlay */
-body::after{
-  content:'';
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:9999;
-  opacity:0.035;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 ::selection{
-  background:rgba(var(--terracotta-rgb),0.2);
-  color:var(--espresso);
+  background:rgba(var(--coral-rgb),0.18);
+  color:var(--ink);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--cream)}
-::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
-::-webkit-scrollbar-thumb:hover{background:var(--stone)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
 
-/* ============================================================
-   TYPOGRAPHY
-   ============================================================ */
+/* Typography */
 .display{
   font-family:'DM Serif Display','Noto Serif SC',Georgia,serif;
   font-weight:400;
   letter-spacing:-0.025em;
-  line-height:1.08;
+  line-height:1.1;
 }
 .serif{
-  font-family:'Noto Serif SC','Cormorant Garamond',Georgia,serif;
-  letter-spacing:-0.01em;
+  font-family:'Noto Serif SC','DM Serif Display',Georgia,serif;
 }
-.mono{
-  font-family:'JetBrains Mono','Noto Sans SC',monospace;
-  font-size:var(--fs-xs);
-  letter-spacing:0.02em;
-}
-.label{
-  font-size:var(--fs-xs);
-  font-weight:600;
-  letter-spacing:0.1em;
-  text-transform:uppercase;
-  color:var(--terracotta);
-}
-.number{
-  font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-weight:400;
-  letter-spacing:-0.02em;
-  line-height:1;
+.handwritten{
+  font-family:'Gamja Flower','Noto Sans SC',cursive;
 }
 
 /* ============================================================
-   NAVIGATION
+   NAV — frosted glass + cute
    ============================================================ */
 .nav{
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:1000;
+  position:fixed;top:0;left:0;right:0;z-index:1000;
   height:var(--nav-h);
-  background:rgba(var(--cream-rgb),0.82);
-  backdrop-filter:blur(18px) saturate(160%);
-  -webkit-backdrop-filter:blur(18px) saturate(160%);
+  background:rgba(var(--cream-rgb),0.8);
+  backdrop-filter:blur(20px) saturate(150%);
+  -webkit-backdrop-filter:blur(20px) saturate(150%);
   border-bottom:1px solid transparent;
-  transition:border-color 0.4s,border-color 0.4s;
+  transition:all 0.35s var(--ease);
 }
-.nav.scrolled{
-  border-bottom-color:var(--border);
-}
+.nav.scrolled{border-bottom-color:var(--border)}
 .nav-inner{
-  max-width:var(--max-w);
-  margin:0 auto;
-  padding:0 28px;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+  max-width:var(--max-w);margin:0 auto;padding:0 24px;
+  height:100%;display:flex;align-items:center;justify-content:space-between;
 }
 .nav-logo{
   font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-size:1.4rem;
-  color:var(--espresso);
-  text-decoration:none;
-  letter-spacing:-0.015em;
+  font-size:1.35rem;color:var(--ink);text-decoration:none;letter-spacing:-0.01em;
+  display:flex;align-items:center;gap:6px;
 }
-.nav-logo span{color:var(--terracotta)}
-.nav-links{
-  display:flex;
-  list-style:none;
-  gap:2px;
+.nav-logo .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--coral);display:inline-block;
+  animation:blink 3s ease-in-out infinite;
 }
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.35}}
+.nav-links{display:flex;list-style:none;gap:2px}
 .nav-links a{
-  display:block;
-  padding:8px 16px;
-  font-size:var(--fs-sm);
-  font-weight:500;
-  color:var(--mud);
-  text-decoration:none;
-  border-radius:8px;
-  transition:all 0.25s var(--ease-out-expo);
-  position:relative;
+  display:block;padding:9px 16px;font-size:0.875rem;font-weight:500;
+  color:var(--mud);text-decoration:none;border-radius:var(--radius-sm);
+  transition:all 0.25s var(--ease);
 }
-.nav-links a::after{
-  content:'';
-  position:absolute;
-  bottom:4px;left:16px;right:16px;
-  height:1.5px;
-  background:var(--terracotta);
-  transform:scaleX(0);
-  transition:transform 0.35s var(--ease-out-expo);
+.nav-links a:hover,.nav-links a.active{
+  color:var(--coral-deep);background:var(--peach-light);
 }
-.nav-links a:hover,
-.nav-links a.active{
-  color:var(--terracotta);
-}
-.nav-links a:hover::after,
-.nav-links a.active::after{
-  transform:scaleX(1);
-}
-.nav-toggle{
-  display:none;
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding:8px;
-  color:var(--espresso);
-  z-index:1001;
-}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .nav-toggle span{
-  display:block;
-  width:22px;
-  height:2px;
-  background:currentColor;
-  margin:5px 0;
-  border-radius:1px;
-  transition:all 0.3s var(--ease-out-expo);
+  display:block;width:22px;height:2px;background:var(--ink);
+  margin:5px 0;border-radius:2px;transition:all 0.3s var(--ease);
 }
 .nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* ============================================================
-   SECTION BASE
+   SECTION SHARED
    ============================================================ */
-.section{
-  max-width:var(--max-w);
-  margin:0 auto;
-  padding:120px 28px;
+.section{max-width:var(--max-w);margin:0 auto;padding:110px 24px}
+.section-head{margin-bottom:56px;text-align:center}
+.section-head .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--coral);margin-bottom:14px;
+  padding:6px 16px;background:var(--peach-light);border-radius:20px;
 }
-.section-header{
-  margin-bottom:64px;
-}
-.section-header .label{
-  margin-bottom:14px;
-  display:block;
-}
-.section-header h2{
-  font-size:var(--fs-h1);
-  margin-bottom:16px;
-}
-.section-header p{
-  font-size:1.08rem;
-  color:var(--mud);
-  max-width:560px;
-  line-height:1.8;
-}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:12px}
+.section-head p{font-size:1rem;color:var(--mud);max-width:500px;margin:0 auto}
 
 /* ============================================================
-   HERO
+   HERO — playful, bold, personal
    ============================================================ */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:120px 28px 80px;
-  max-width:var(--max-w);
-  margin:0 auto;
+  min-height:100vh;display:flex;align-items:center;
+  padding:120px 24px 80px;max-width:var(--max-w);margin:0 auto;
   position:relative;
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:720px;
+.hero-content{position:relative;z-index:2;max-width:680px}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 18px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:28px;font-size:0.82rem;font-weight:600;color:var(--mud);
+  margin-bottom:32px;transition:all 0.3s;
 }
-.hero-status{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 20px;
-  background:rgba(var(--terracotta-rgb),0.08);
-  border:1px solid rgba(var(--terracotta-rgb),0.15);
-  border-radius:24px;
-  font-size:var(--fs-sm);
-  font-weight:500;
-  color:var(--terracotta);
-  margin-bottom:36px;
-  letter-spacing:0.02em;
-}
-.hero-status .pulse{
-  width:7px;height:7px;
-  border-radius:50%;
-  background:var(--terracotta);
+.hero-chip:hover{border-color:var(--peach);transform:translateY(-1px)}
+.hero-chip .live-dot{
+  width:7px;height:7px;border-radius:50%;background:#4CAF50;
   animation:pulse 2.2s ease-in-out infinite;
 }
-@keyframes pulse{
-  0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(var(--terracotta-rgb),0.4)}
-  50%{opacity:0.6;box-shadow:0 0 0 8px rgba(var(--terracotta-rgb),0)}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(76,175,80,0.3)}50%{opacity:0.5;box-shadow:0 0 0 10px rgba(76,175,80,0)}}
+.hero h1{font-size:clamp(3.2rem,7.5vw,5.8rem);margin-bottom:6px}
+.hero h1 .wave{display:inline-block;animation:wave 2.5s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(0deg)}25%{transform:rotate(20deg)}75%{transform:rotate(-15deg)}}
+.hero-sub{
+  font-size:clamp(1rem,1.5vw,1.15rem);color:var(--mud);font-weight:400;
+  margin-bottom:16px;letter-spacing:0.01em;
 }
-.hero h1{
-  font-size:var(--fs-hero);
-  margin-bottom:8px;
+.hero-vibe{
+  font-family:'Gamja Flower','Noto Sans SC',cursive;
+  font-size:1.15rem;color:var(--coral);
+  margin-bottom:36px;opacity:0.85;
 }
-.hero h1 .accent{
-  color:var(--terracotta);
-  position:relative;
+.hero-kpis{
+  display:flex;flex-wrap:wrap;gap:12px;margin-bottom:42px;
 }
-.hero-tagline{
-  font-size:clamp(1.05rem,1.6vw,1.2rem);
-  color:var(--mud);
-  font-weight:400;
-  margin-bottom:40px;
-  letter-spacing:0.015em;
+.kpi{
+  display:flex;align-items:center;gap:12px;
+  background:white;border:1.5px solid var(--border-soft);
+  border-radius:var(--radius-md);padding:16px 22px;
+  transition:all 0.35s var(--ease);
+  box-shadow:var(--shadow-card);
 }
-.hero-kpi-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  margin-bottom:44px;
+.kpi:hover{
+  transform:translateY(-4px);box-shadow:var(--shadow-hover);
+  border-color:var(--peach);
 }
-.kpi-card{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius);
-  padding:18px 24px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  transition:all 0.35s var(--ease-out-expo);
-  box-shadow:0 1px 2px rgba(0,0,0,0.02);
+.kpi-emoji{
+  font-size:1.8rem;width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:14px;flex-shrink:0;
 }
-.kpi-card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 28px rgba(0,0,0,0.06);
-  border-color:var(--amber-light);
-}
-.kpi-card .kpi-emoji{
-  font-size:1.6rem;
-  width:44px;height:44px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:var(--amber-light);
-  border-radius:12px;
-  flex-shrink:0;
-}
-.kpi-card .kpi-num{
-  font-size:1.7rem;
-  font-weight:900;
-  color:var(--terracotta-dark);
-  line-height:1.15;
-  letter-spacing:-0.02em;
-}
-.kpi-card .kpi-label{
-  font-size:var(--fs-xs);
-  color:var(--stone);
-  font-weight:500;
-}
-.hero-cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-}
+.kpi-num{font-size:1.8rem;font-weight:900;color:var(--coral-deep);line-height:1.15;letter-spacing:-0.02em}
+.kpi-num .suffix{font-size:0.55em;font-weight:600}
+.kpi-unit{font-size:0.78rem;color:var(--stone);font-weight:500}
 
-/* Buttons */
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px}
 .btn{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:15px 30px;
-  font-size:0.94rem;
-  font-weight:600;
-  border-radius:12px;
-  text-decoration:none;
-  transition:all 0.3s var(--ease-out-expo);
-  letter-spacing:0.01em;
-  cursor:pointer;
-  border:none;
-  font-family:inherit;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:15px 30px;font-size:0.94rem;font-weight:700;
+  border-radius:var(--radius-md);text-decoration:none;
+  transition:all 0.3s var(--spring);letter-spacing:0.01em;
+  cursor:pointer;border:none;font-family:inherit;
 }
-.btn-primary{
-  background:var(--terracotta);
-  color:#fff;
-  box-shadow:0 4px 20px rgba(var(--terracotta-rgb),0.32);
+.btn-fill{
+  background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+  color:#fff;box-shadow:var(--shadow-btn);
 }
-.btn-primary:hover{
-  background:var(--terracotta-dark);
-  transform:translateY(-2px);
-  box-shadow:0 8px 30px rgba(var(--terracotta-rgb),0.42);
+.btn-fill:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 28px rgba(var(--coral-rgb),0.4)}
+.btn-outline{
+  background:white;color:var(--coral);border:2px solid var(--coral);
 }
-.btn-ghost{
-  background:transparent;
-  color:var(--terracotta);
-  border:1.5px solid var(--terracotta);
-}
-.btn-ghost:hover{
-  background:rgba(var(--terracotta-rgb),0.06);
-  transform:translateY(-2px);
-}
+.btn-outline:hover{background:var(--peach-light);transform:translateY(-3px)}
 
-/* Hero decorative */
-.hero-visual{
-  position:absolute;
-  right:-60px;
-  top:50%;
-  transform:translateY(-50%);
-  pointer-events:none;
-}
-.hero-visual .blob{
-  width:420px;
-  height:420px;
-  border-radius:50%;
-  background:radial-gradient(circle at 40% 45%,rgba(var(--terracotta-rgb),0.12) 0%,rgba(var(--amber-rgb),0.06) 40%,transparent 70%);
-}
-.hero-visual .ring{
-  position:absolute;
-  top:20px;
-  left:20px;
-  width:380px;
-  height:380px;
-  border-radius:50%;
-  border:1px solid rgba(var(--terracotta-rgb),0.1);
-  animation:spin 60s linear infinite;
-}
-@keyframes spin{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
+/* Hero blob */
+.hero-blob{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:460px;height:460px;border-radius:50%;
+  background:radial-gradient(circle at 35% 40%,rgba(var(--peach-rgb),0.14) 0%,rgba(var(--honey-rgb),0.07) 45%,transparent 72%);
+  pointer-events:none;z-index:0;
 }
 
 /* ============================================================
    ABOUT
    ============================================================ */
-.about-wrapper{
-  background:linear-gradient(180deg,var(--cream) 0%,rgba(var(--amber-light-rgb),0.5) 30%,var(--cream) 70%);
-  padding:100px 0;
+.about-strip{
+  background:linear-gradient(180deg,var(--cream) 0%,var(--peach-light) 35%,var(--cream) 70%);
+  padding:90px 0;
 }
 .about-grid{
-  display:grid;
-  grid-template-columns:1.1fr 0.9fr;
-  gap:56px;
-  align-items:start;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:start;
 }
 .about-text p{
-  font-size:1.03rem;
-  color:var(--mud);
-  line-height:1.95;
-  margin-bottom:22px;
+  font-size:1rem;color:var(--mud);line-height:1.95;margin-bottom:20px;
 }
-.about-text p strong{
-  color:var(--espresso);
-  font-weight:600;
-}
-.about-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:28px;
-}
+.about-text strong{color:var(--ink);font-weight:700}
+.about-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .tag{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  padding:10px 18px;
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:24px;
-  font-size:var(--fs-sm);
-  font-weight:500;
-  color:var(--espresso);
-  box-shadow:0 1px 3px rgba(0,0,0,0.03);
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 18px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:24px;font-size:0.875rem;font-weight:500;color:var(--ink);
+  transition:all 0.25s var(--ease);
 }
-.tag.accent{
-  background:var(--terracotta);
-  color:#fff;
-  border-color:var(--terracotta);
-  font-weight:700;
-}
-.about-cards{
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
+.tag:hover{transform:translateY(-2px);border-color:var(--peach)}
+.tag.pop{background:var(--coral);color:#fff;border-color:var(--coral);font-weight:700}
+
+.a-cards{display:flex;flex-direction:column;gap:14px}
 .a-card{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius);
-  padding:22px 24px;
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
-  transition:all 0.3s var(--ease-out-expo);
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-md);
+  padding:22px 24px;display:flex;gap:16px;align-items:flex-start;
+  transition:all 0.3s var(--ease);box-shadow:var(--shadow-card);
 }
-.a-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.05);
+.a-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.a-icon{
+  width:44px;height:44px;border-radius:13px;
+  display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;
 }
-.a-card .a-icon{
-  width:42px;height:42px;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.2rem;
-  flex-shrink:0;
-}
-.a-card h4{font-size:0.93rem;font-weight:600;margin-bottom:2px;color:var(--espresso)}
-.a-card p{font-size:var(--fs-sm);color:var(--mud)}
+.a-card h4{font-size:0.92rem;font-weight:700;margin-bottom:2px}
+.a-card p{font-size:0.85rem;color:var(--mud)}
 
 /* ============================================================
-   EXPERIENCE — Editorial Timeline
+   EXPERIENCE — bento cards
    ============================================================ */
-.exp-list{
-  display:flex;
-  flex-direction:column;
-  gap:40px;
+.exp-grid{display:flex;flex-direction:column;gap:28px}
+.exp-card{
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:32px 34px;display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start;
+  transition:all 0.35s var(--ease);box-shadow:var(--shadow-card);
+  position:relative;overflow:hidden;
 }
-.exp-item{
-  display:grid;
-  grid-template-columns:200px 1fr;
-  gap:40px;
-  position:relative;
-  padding-left:28px;
+.exp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.exp-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,var(--coral),var(--peach));
+  border-radius:0 4px 4px 0;transform:scaleY(0.85);
+  transition:transform 0.4s var(--ease);
 }
-.exp-item::before{
-  content:'';
-  position:absolute;
-  left:0;top:8px;bottom:8px;
-  width:1px;
-  background:linear-gradient(180deg,var(--terracotta) 0%,var(--amber-light) 100%);
+.exp-card:hover::before{transform:scaleY(1)}
+.exp-card:nth-child(2)::before{background:linear-gradient(180deg,var(--honey),#F0C860)}
+.exp-card:nth-child(3)::before{background:linear-gradient(180deg,var(--matcha),#A8C99A)}
+
+.exp-left{}
+.exp-period{
+  display:inline-block;font-size:0.78rem;font-weight:700;letter-spacing:0.04em;
+  text-transform:uppercase;color:var(--coral);margin-bottom:8px;
+  padding:5px 14px;background:var(--peach-light);border-radius:8px;
 }
-.exp-item::after{
-  content:'';
-  position:absolute;
-  left:-4px;top:10px;
-  width:9px;height:9px;
-  border-radius:50%;
-  background:var(--terracotta);
-  border:2px solid var(--cream);
+.exp-card:nth-child(2) .exp-period{color:var(--honey);background:var(--honey-light)}
+.exp-card:nth-child(3) .exp-period{color:var(--matcha);background:var(--matcha-light)}
+.exp-org{font-family:'DM Serif Display','Noto Serif SC',serif;font-size:1.25rem;font-weight:400;margin-bottom:4px}
+.exp-role{font-size:0.875rem;color:var(--mud);font-weight:500}
+
+.exp-body ul{list-style:none}
+.exp-body li{
+  position:relative;padding-left:20px;margin-bottom:10px;
+  font-size:0.92rem;color:var(--mud);line-height:1.7;
 }
-.exp-meta{
-  padding-top:4px;
+.exp-body li::before{
+  content:'✦';position:absolute;left:0;top:0;
+  font-size:0.55rem;color:var(--coral);
 }
-.exp-date{
-  display:inline-block;
-  font-size:var(--fs-xs);
-  font-weight:600;
-  color:var(--terracotta);
-  letter-spacing:0.04em;
-  text-transform:uppercase;
-  margin-bottom:8px;
-  padding:5px 12px;
-  background:rgba(var(--terracotta-rgb),0.07);
-  border-radius:6px;
+.exp-card:nth-child(2) .exp-body li::before{color:var(--honey)}
+.exp-card:nth-child(3) .exp-body li::before{color:var(--matcha)}
+.exp-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.stat-chip{
+  padding:7px 14px;border-radius:8px;font-size:0.8rem;font-weight:700;
 }
-.exp-org{
-  font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-size:1.3rem;
-  color:var(--espresso);
-  margin-bottom:4px;
-}
-.exp-role{
-  font-size:var(--fs-sm);
-  color:var(--mud);
-  font-weight:500;
-}
-.exp-body{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius-lg);
-  padding:28px 30px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.03);
-  transition:box-shadow 0.3s var(--ease-out-expo);
-}
-.exp-body:hover{
-  box-shadow:0 6px 24px rgba(0,0,0,0.07);
-}
-.exp-body ul{
-  list-style:none;
-}
-.exp-body ul li{
-  position:relative;
-  padding-left:18px;
-  margin-bottom:11px;
-  font-size:0.94rem;
-  color:var(--mud);
-  line-height:1.7;
-}
-.exp-body ul li::before{
-  content:'→';
-  position:absolute;
-  left:0;top:0;
-  color:var(--terracotta);
-  font-size:0.8rem;
-}
-.exp-kpis{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:18px;
-}
-.exp-kpi{
-  padding:7px 14px;
-  background:var(--amber-light);
-  border-radius:8px;
-  font-size:var(--fs-xs);
-  font-weight:600;
-  color:var(--terracotta-dark);
-}
+.stat-chip.warm{background:var(--peach-light);color:var(--coral-deep)}
+.stat-chip.gold{background:var(--honey-light);color:#B88028}
+.stat-chip.green{background:var(--matcha-light);color:#5C7A4E}
 
 /* ============================================================
-   PROJECTS
+   PROJECTS — bento grid
    ============================================================ */
-.projects-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proj-card{
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:34px;transition:all 0.4s var(--ease);box-shadow:var(--shadow-card);
+  position:relative;overflow:hidden;
 }
-.project-card{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius-lg);
-  padding:34px;
-  transition:all 0.4s var(--ease-out-expo);
-  position:relative;
-  overflow:hidden;
+.proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.proj-card.star{border-color:rgba(var(--coral-rgb),0.2)}
+.proj-card .proj-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;background:var(--peach-light);border-radius:14px;
+  font-size:0.78rem;font-weight:700;color:var(--coral-deep);margin-bottom:18px;
 }
-.project-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 16px 48px rgba(0,0,0,0.07);
+.proj-card h3{
+  font-family:'DM Serif Display','Noto Serif SC',serif;font-size:1.35rem;
+  font-weight:400;margin-bottom:6px;
 }
-.project-card.featured{
-  border-color:rgba(var(--terracotta-rgb),0.25);
+.proj-date{font-size:0.8rem;color:var(--stone);margin-bottom:16px}
+.proj-card p{font-size:0.9rem;color:var(--mud);margin-bottom:6px;line-height:1.7}
+.proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0}
+.proj-stack span{
+  padding:5px 12px;background:var(--cream);border-radius:7px;
+  font-size:0.78rem;font-weight:500;color:var(--mud);
 }
-.project-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
-  background:linear-gradient(90deg,var(--terracotta),var(--amber));
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform 0.5s var(--ease-out-expo);
+.proj-links{display:flex;gap:16px;margin-top:20px}
+.proj-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:0.875rem;font-weight:700;color:var(--coral);text-decoration:none;
+  transition:gap 0.25s var(--ease);
 }
-.project-card:hover::before{
-  transform:scaleX(1);
-}
-.project-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:6px 14px;
-  background:rgba(var(--terracotta-rgb),0.08);
-  border-radius:14px;
-  font-size:var(--fs-xs);
-  font-weight:600;
-  color:var(--terracotta);
-  margin-bottom:18px;
-}
-.project-card h3{
-  font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-size:var(--fs-h3);
-  font-weight:400;
-  margin-bottom:6px;
-}
-.project-date{
-  font-size:var(--fs-xs);
-  color:var(--stone);
-  margin-bottom:18px;
-}
-.project-card p{
-  font-size:0.92rem;
-  color:var(--mud);
-  margin-bottom:7px;
-  line-height:1.7;
-}
-.project-stack{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin:20px 0;
-}
-.project-stack span{
-  padding:5px 12px;
-  background:var(--cream);
-  border-radius:6px;
-  font-size:var(--fs-xs);
-  font-weight:500;
-  color:var(--mud);
-}
-.project-links{
-  display:flex;
-  gap:16px;
-  margin-top:20px;
-}
-.p-link{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  font-size:var(--fs-sm);
-  font-weight:600;
-  color:var(--terracotta);
-  text-decoration:none;
-  transition:all 0.25s var(--ease-out-expo);
-}
-.p-link:hover{gap:10px;color:var(--terracotta-dark)}
-.p-link .arr{display:inline-block;transition:transform 0.25s var(--ease-out-expo)}
-.p-link:hover .arr{transform:translate(3px,-3px)}
+.proj-link:hover{gap:10px;color:var(--coral-deep)}
+.proj-link .arr{transition:transform 0.25s var(--ease)}
+.proj-link:hover .arr{transform:translate(3px,-3px)}
 
 /* ============================================================
-   CREATIVE WORKS (from PPTX)
+   CREATIVE WORKS
    ============================================================ */
-.creative-wrapper{
-  background:linear-gradient(180deg,var(--cream) 0%,rgba(var(--amber-light-rgb),0.4) 40%,var(--cream) 80%);
-  padding:100px 0;
+.creative-strip{
+  background:linear-gradient(180deg,var(--cream) 0%,rgba(var(--matcha-light-rgb),0.6) 35%,var(--cream) 70%);
+  padding:90px 0;
 }
-.creative-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.creative-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c-card{
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:30px 24px;text-align:center;transition:all 0.35s var(--ease);
+  box-shadow:var(--shadow-card);
 }
-.creative-card{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius);
-  padding:28px;
-  text-align:center;
-  transition:all 0.35s var(--ease-out-expo);
+.c-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hover)}
+.c-icon-lg{
+  width:68px;height:68px;margin:0 auto 18px;border-radius:20px;
+  display:flex;align-items:center;justify-content:center;font-size:2rem;
 }
-.creative-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 12px 36px rgba(0,0,0,0.06);
+.c-card h4{
+  font-family:'DM Serif Display','Noto Serif SC',serif;font-size:1.15rem;
+  font-weight:400;margin-bottom:8px;
 }
-.creative-icon{
-  width:64px;height:64px;
-  margin:0 auto 16px;
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.8rem;
-}
-.creative-card h4{
-  font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-size:1.15rem;
-  font-weight:400;
-  margin-bottom:8px;
-  color:var(--espresso);
-}
-.creative-card p{
-  font-size:var(--fs-sm);
-  color:var(--mud);
-  line-height:1.6;
-}
+.c-card p{font-size:0.88rem;color:var(--mud);line-height:1.65}
 
 /* ============================================================
    SKILLS
    ============================================================ */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.skill-box{
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-md);
+  padding:26px 22px;transition:all 0.3s var(--ease);box-shadow:var(--shadow-card);
 }
-.skill-block{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius);
-  padding:26px 22px;
-  transition:all 0.3s var(--ease-out-expo);
-}
-.skill-block:hover{
-  transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(0,0,0,0.05);
-}
-.skill-emoji{
-  font-size:1.5rem;
-  margin-bottom:14px;
-}
-.skill-block h4{
-  font-size:0.92rem;
-  font-weight:700;
-  margin-bottom:14px;
-  color:var(--espresso);
-}
-.chip-list{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-}
+.skill-box:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.skill-emoji{font-size:1.6rem;margin-bottom:14px}
+.skill-box h4{font-size:0.9rem;font-weight:700;margin-bottom:14px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{
-  padding:4px 10px;
-  background:var(--cream);
-  border-radius:6px;
-  font-size:var(--fs-xs);
-  color:var(--mud);
-  font-weight:500;
+  padding:5px 10px;background:var(--cream);border-radius:7px;
+  font-size:0.76rem;font-weight:500;color:var(--mud);
 }
-.certs-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:14px;
-  justify-content:center;
-  margin-top:44px;
+.cert-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:40px}
+.cert{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:28px;font-size:0.875rem;font-weight:700;color:var(--ink);
+  box-shadow:var(--shadow-card);transition:all 0.25s var(--ease);
 }
-.cert-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:12px 22px;
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:28px;
-  font-size:var(--fs-sm);
-  font-weight:600;
-  color:var(--espresso);
-}
-.cert-pill .ci{font-size:1.1rem}
+.cert:hover{transform:translateY(-2px);border-color:var(--peach)}
+.cert .ci{font-size:1.1rem}
 
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:48px;
-  align-items:start;
-}
-.contact-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.contact-list{display:flex;flex-direction:column;gap:10px}
 .c-item{
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:18px 20px;
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius);
-  text-decoration:none;
-  color:var(--espresso);
-  transition:all 0.3s var(--ease-out-expo);
+  display:flex;align-items:center;gap:14px;
+  padding:18px 20px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:var(--radius-md);text-decoration:none;color:var(--ink);
+  transition:all 0.3s var(--ease);box-shadow:var(--shadow-card);
 }
-.c-item:hover{
-  transform:translateX(4px);
-  border-color:rgba(var(--terracotta-rgb),0.2);
-  box-shadow:0 4px 16px rgba(0,0,0,0.04);
-}
+.c-item:hover{transform:translateX(5px);border-color:var(--peach);box-shadow:var(--shadow-hover)}
 .c-icon{
-  width:40px;height:40px;
-  border-radius:10px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.15rem;
-  flex-shrink:0;
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:1.15rem;flex-shrink:0;
 }
-.c-label{font-size:var(--fs-xs);color:var(--stone);font-weight:500}
-.c-value{font-size:var(--fs-sm);font-weight:600}
-.social-links{
-  display:flex;
-  gap:10px;
-  margin-top:18px;
-}
+.c-label{font-size:0.76rem;color:var(--stone);font-weight:500}
+.c-value{font-size:0.9rem;font-weight:700}
+.social-row{display:flex;gap:10px;margin-top:16px}
 .social-pill{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:10px 18px;
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:24px;
-  text-decoration:none;
-  font-size:var(--fs-sm);
-  font-weight:500;
-  color:var(--mud);
-  transition:all 0.25s var(--ease-out-expo);
+  display:inline-flex;align-items:center;gap:6px;
+  padding:10px 18px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:24px;text-decoration:none;font-size:0.85rem;font-weight:500;
+  color:var(--mud);transition:all 0.25s var(--ease);
 }
-.social-pill:hover{
-  border-color:rgba(var(--terracotta-rgb),0.3);
-  color:var(--terracotta);
-}
+.social-pill:hover{border-color:var(--coral);color:var(--coral)}
 
-/* Contact Form */
-.c-form{
-  background:var(--paper);
-  border:1px solid var(--border-light);
-  border-radius:var(--radius-lg);
-  padding:34px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.03);
+.contact-form{
+  background:white;border:1.5px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:34px;box-shadow:var(--shadow-card);
 }
-.c-form h3{
-  font-family:'DM Serif Display','Noto Serif SC',serif;
-  font-size:1.45rem;
-  font-weight:400;
-  margin-bottom:24px;
+.contact-form h3{
+  font-family:'DM Serif Display','Noto Serif SC',serif;font-size:1.4rem;
+  font-weight:400;margin-bottom:24px;
 }
-.field{margin-bottom:18px}
-.field label{
-  display:block;
-  font-size:var(--fs-sm);
-  font-weight:600;
-  margin-bottom:7px;
-  color:var(--espresso);
-}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:0.85rem;font-weight:700;margin-bottom:6px;color:var(--ink)}
 .field input,.field textarea{
-  width:100%;
-  padding:12px 16px;
-  border:1.5px solid var(--border-light);
-  border-radius:10px;
-  font-size:0.94rem;
-  font-family:inherit;
-  color:var(--espresso);
-  background:var(--cream);
-  outline:none;
-  transition:border-color 0.25s,box-shadow 0.25s;
+  width:100%;padding:13px 16px;border:1.5px solid var(--border-soft);
+  border-radius:var(--radius-sm);font-size:0.93rem;font-family:inherit;
+  color:var(--ink);background:var(--cream);outline:none;
+  transition:all 0.25s;
 }
 .field input:focus,.field textarea:focus{
-  border-color:var(--terracotta);
-  box-shadow:0 0 0 3px rgba(var(--terracotta-rgb),0.08);
-  background:var(--paper);
+  border-color:var(--coral);box-shadow:0 0 0 4px rgba(var(--coral-rgb),0.08);
+  background:white;
 }
 .field textarea{min-height:110px;resize:vertical}
-.submit-btn{
-  width:100%;
-  padding:14px;
-  background:var(--terracotta);
-  color:#fff;
-  border:none;
-  border-radius:10px;
-  font-size:0.94rem;
-  font-weight:600;
-  cursor:pointer;
-  transition:all 0.3s var(--ease-out-expo);
-  font-family:inherit;
+.submit{
+  width:100%;padding:14px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--coral),var(--coral-deep));
+  color:#fff;border:none;font-size:0.94rem;font-weight:700;
+  cursor:pointer;transition:all 0.3s var(--ease);font-family:inherit;
+  box-shadow:var(--shadow-btn);
 }
-.submit-btn:hover{
-  background:var(--terracotta-dark);
-  box-shadow:0 6px 24px rgba(var(--terracotta-rgb),0.35);
-}
+.submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(var(--coral-rgb),0.4)}
 
 /* ============================================================
    FOOTER
    ============================================================ */
 .footer{
-  text-align:center;
-  padding:48px 28px;
-  border-top:1px solid var(--border-light);
-  max-width:var(--max-w);
-  margin:0 auto;
+  text-align:center;padding:48px 24px;border-top:1px solid var(--border-soft);
+  max-width:var(--max-w);margin:0 auto;
 }
-.footer p{
-  font-size:var(--fs-sm);
-  color:var(--stone);
+.footer .vibe-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;background:white;border:1.5px solid var(--border-soft);
+  border-radius:20px;font-size:0.8rem;font-weight:600;color:var(--mud);margin-bottom:16px;
 }
-.footer p+p{margin-top:6px;font-size:var(--fs-xs)}
+.footer p{font-size:0.85rem;color:var(--stone)}
+.footer p+p{margin-top:4px;font-size:0.78rem}
 
 /* ============================================================
-   ANIMATIONS — Scroll Reveal
+   SCROLL REVEAL
    ============================================================ */
 .reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 0.7s var(--ease-out-expo),transform 0.7s var(--ease-out-expo);
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.7s var(--ease),transform 0.7s var(--ease);
 }
-.reveal.visible{
-  opacity:1;
-  transform:translateY(0);
-}
-.reveal-delay-1{transition-delay:0.08s}
-.reveal-delay-2{transition-delay:0.16s}
-.reveal-delay-3{transition-delay:0.24s}
-.reveal-delay-4{transition-delay:0.32s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.06s}
+.reveal-d2{transition-delay:0.12s}
+.reveal-d3{transition-delay:0.18s}
+.reveal-d4{transition-delay:0.24s}
 
 /* ============================================================
    RESPONSIVE
    ============================================================ */
 @media(max-width:960px){
-  :root{--nav-h:60px}
-
   .nav-links{
-    display:none;
-    position:absolute;
-    top:var(--nav-h);
-    left:0;right:0;
-    background:rgba(var(--cream-rgb),0.95);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--border);
-    padding:16px 28px;
-    flex-direction:column;
-    gap:0;
+    display:none;position:absolute;top:var(--nav-h);left:0;right:0;
+    background:rgba(var(--cream-rgb),0.96);backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:0;
   }
   .nav-links.open{display:flex}
   .nav-links a{padding:13px 16px}
-  .nav-links a::after{display:none}
   .nav-toggle{display:block}
 
-  .hero{min-height:auto;padding:100px 28px 60px}
-  .hero-visual{display:none}
+  .hero{min-height:auto;padding:100px 24px 60px}
+  .hero-blob{display:none}
 
-  .about-grid{grid-template-columns:1fr;gap:36px}
-  .projects-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .exp-card{grid-template-columns:1fr;gap:18px;padding:26px}
+  .proj-grid{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
-  .creative-grid{grid-template-columns:1fr}
+  .creative-row{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr}
-  .exp-item{grid-template-columns:1fr;gap:16px;padding-left:22px}
 
-  .section{padding:80px 24px}
+  .section{padding:80px 20px}
 }
-
-@media(max-width:560px){
+@media(max-width:540px){
   .skills-grid{grid-template-columns:1fr}
-  .hero-kpi-row{gap:10px}
-  .kpi-card{width:100%;justify-content:flex-start}
-  .section-header h2{font-size:2rem}
+  .hero h1{font-size:2.6rem}
+  .hero-kpis{gap:8px}
+  .kpi{width:100%}
 }
 </style>
 </head>
 <body>
 
-<!-- ============================================================
-     NAV
-     ============================================================ -->
+<!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Tianjiao<span>.</span></a>
+    <a href="#hero" class="nav-logo">Tianjiao<span class="dot"></span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about" data-nav="about">About</a></li>
-      <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#experience" data-nav="experience">XP</a></li>
       <li><a href="#projects" data-nav="projects">Projects</a></li>
       <li><a href="#creative" data-nav="creative">Creative</a></li>
       <li><a href="#skills" data-nav="skills">Skills</a></li>
-      <li><a href="#contact" data-nav="contact">Contact</a></li>
+      <li><a href="#contact" data-nav="contact">Say Hi</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+<!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hero-blob"></div>
   <div class="hero-content">
-    <div class="hero-status reveal">
-      <span class="pulse"></span> 开放实习 · 产品运营 / 电商运营
+    <div class="hero-chip reveal">
+      <span class="live-dot"></span> 找实习 ing · 产品运营 / 电商运营
     </div>
-    <h1 class="display reveal reveal-delay-1">刘天骄</h1>
-    <p class="hero-tagline reveal reveal-delay-2">北京科技大学 · 社会工作 · 大二 · 北京</p>
-    <div class="hero-kpi-row reveal reveal-delay-3">
-      <div class="kpi-card">
-        <div class="kpi-emoji">📊</div>
+    <h1 class="display reveal reveal-d1">刘天骄 <span class="wave">👋</span></h1>
+    <p class="hero-sub reveal reveal-d2">北京科技大学 · 社会工作 · 大二 ·📍北京</p>
+    <p class="hero-vibe reveal reveal-d2">✨ vibecoded with AI · 许愿式编程选手 ✨</p>
+    <div class="hero-kpis reveal reveal-d3">
+      <div class="kpi">
+        <div class="kpi-emoji" style="background:var(--peach-light)">📊</div>
         <div>
-          <div class="kpi-num">20W<span style="font-size:0.7em;font-weight:500">+</span></div>
-          <div class="kpi-label">累计内容阅读量</div>
+          <div class="kpi-num">20W<span class="suffix">+</span></div>
+          <div class="kpi-unit">累计内容阅读量</div>
         </div>
       </div>
-      <div class="kpi-card">
-        <div class="kpi-emoji">🛒</div>
+      <div class="kpi">
+        <div class="kpi-emoji" style="background:var(--honey-light)">🛒</div>
         <div>
-          <div class="kpi-num">160W<span style="font-size:0.7em;font-weight:500">+</span></div>
-          <div class="kpi-label">单场直播 GMV</div>
+          <div class="kpi-num">160W<span class="suffix">+</span></div>
+          <div class="kpi-unit">单场直播 GMV</div>
         </div>
       </div>
-      <div class="kpi-card">
-        <div class="kpi-emoji">❤️</div>
+      <div class="kpi">
+        <div class="kpi-emoji" style="background:var(--matcha-light)">❤️</div>
         <div>
-          <div class="kpi-num">2.8W<span style="font-size:0.7em;font-weight:500">+</span></div>
-          <div class="kpi-label">账号累计赞藏</div>
+          <div class="kpi-num">2.8W<span class="suffix">+</span></div>
+          <div class="kpi-unit">账号累计赞藏</div>
         </div>
       </div>
     </div>
-    <div class="hero-cta reveal reveal-delay-4">
-      <a href="#projects" class="btn btn-primary">查看项目 →</a>
-      <a href="#contact" class="btn btn-ghost">联系我</a>
+    <div class="hero-cta reveal reveal-d4">
+      <a href="#projects" class="btn btn-fill">✨ 看我的项目</a>
+      <a href="#contact" class="btn btn-outline">💬 联系我</a>
     </div>
-  </div>
-  <div class="hero-visual">
-    <div class="blob"></div>
-     <div class="ring"></div>
   </div>
 </section>
 
-<!-- ============================================================
-     ABOUT
-     ============================================================ -->
-<div class="about-wrapper">
+<!-- ABOUT -->
+<div class="about-strip">
 <section class="section" id="about">
-  <div class="section-header reveal">
-    <span class="label">About</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">👀 About Me</span>
     <h2 class="display">关于我</h2>
   </div>
   <div class="about-grid">
-    <div class="about-text reveal reveal-delay-1">
+    <div class="about-text reveal reveal-d1">
       <p>
-        我是刘天骄，北京科技大学社会工作专业大二学生，正在求职<strong>产品运营/电商运营实习</strong>。
-        独立运营个人小红书账号（美食/旅游方向），累计发布 70+ 篇内容，赞藏 2.8W+。
+        嗨！我是刘天骄，北京科技大学社会工作专业大二学生，正在找<strong>产品运营 / 电商运营实习</strong> 🎯
       </p>
       <p>
-        在去哪儿网实习期间，独立负责小红书渠道，产出 60 篇笔记，累计曝光 59.8W+，单场直播引流占比 26%，GMV 160W+。
-        熟练使用 <strong>AIGC 工具</strong>（Claude Code、Cursor、Codex）完成内容创作与网页开发，有独立项目落地经验。
+        全网同名 <strong>@虔诚的千岛酱</strong>，独立运营个人小红书（美食/旅游），累计发布 70+ 篇，赞藏 2.8W+。在去哪儿网实习期间独立负责小红书渠道，产出 60 篇笔记，累计曝光 59.8W+，单场 GMV 160W+。
       </p>
       <p>
-        性格开朗、抗压能力强、对数据敏感，期待在电商/产品运营领域长期发展。
+        最近沉迷 <strong>vibecoding</strong>，用 Claude Code / Cursor / Codex 做各种有趣的 AI 项目。ENTP 选手，开朗抗压，数据敏感，期待在这个领域长期发展 🚀
       </p>
       <div class="about-tags">
-        <span class="tag accent">🧠 ENTP</span>
+        <span class="tag pop">🧠 ENTP</span>
         <span class="tag">📸 摄影</span>
         <span class="tag">✈️ 旅行</span>
         <span class="tag">🍜 美食</span>
         <span class="tag">🌟 追星</span>
+        <span class="tag">🎧 K-pop</span>
       </div>
     </div>
-    <div class="about-cards reveal reveal-delay-2">
+    <div class="a-cards reveal reveal-d2">
       <div class="a-card">
-        <div class="a-icon" style="background:#FFF0E8">🎓</div>
-        <div>
-          <h4>教育背景</h4>
-          <p>北京科技大学 · 社会工作专业 · 大二在读</p>
-        </div>
+        <div class="a-icon" style="background:var(--peach-light)">🎓</div>
+        <div><h4>教育背景</h4><p>北京科技大学 · 社会工作专业 · 大二</p></div>
       </div>
       <div class="a-card">
-        <div class="a-icon" style="background:#E8F4FF">📍</div>
-        <div>
-          <h4>所在地</h4>
-          <p>北京 · 可到岗实习</p>
-        </div>
+        <div class="a-icon" style="background:var(--sky-light)">📍</div>
+        <div><h4>Base</h4><p>北京 · 可到岗实习</p></div>
       </div>
       <div class="a-card">
-        <div class="a-icon" style="background:#F0F5E8">🎯</div>
-        <div>
-          <h4>求职意向</h4>
-          <p>产品运营 / 电商运营 实习岗</p>
-        </div>
+        <div class="a-icon" style="background:var(--matcha-light)">🎯</div>
+        <div><h4>求职方向</h4><p>产品运营 / 电商运营 实习岗</p></div>
       </div>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ============================================================
-     EXPERIENCE
-     ============================================================ -->
+<!-- EXPERIENCE -->
 <section class="section" id="experience">
-  <div class="section-header reveal">
-    <span class="label">Experience</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">💼 Experience</span>
     <h2 class="display">实习与运营经历</h2>
-    <p>从大厂实习到个人自媒体，每一步都在积累运营实战经验。</p>
+    <p>从大厂实习到个人自媒体，每一步都在积累 🧩</p>
   </div>
+  <div class="exp-grid">
 
-  <div class="exp-list">
-
-    <!-- Qunar -->
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <span class="exp-date">2026.01 – 03</span>
+    <div class="exp-card reveal">
+      <div class="exp-left">
+        <span class="exp-period">2026.01 – 03</span>
         <h3 class="exp-org">去哪儿网</h3>
         <p class="exp-role">产品运营实习生</p>
       </div>
       <div class="exp-body">
         <ul>
           <li>独立负责小红书渠道内容运营，产出 60 篇笔记</li>
-          <li>累计曝光 59.8W+，阅读 9.2W+，平均 CTR 11.2%（高于行业均值）</li>
-          <li>三篇爆款贡献 53% 的总展现</li>
-          <li>直播引流占比最高 26%，单场 GMV 160W+</li>
+          <li>累计曝光 59.8W+，阅读 9.2W+，平均 CTR 11.2%（高于行业均值 🔥）</li>
+          <li>三篇爆款贡献 53% 的总展现，直播引流占比最高 26%</li>
+          <li>单场直播 GMV 160W+ 🛒</li>
         </ul>
-        <div class="exp-kpis">
-          <span class="exp-kpi">📈 曝光 59.8W+</span>
-          <span class="exp-kpi">👁 阅读 9.2W+</span>
-          <span class="exp-kpi">🔥 CTR 11.2%</span>
-          <span class="exp-kpi">🛒 GMV 160W+</span>
+        <div class="exp-stats">
+          <span class="stat-chip warm">📈 曝光 59.8W+</span>
+          <span class="stat-chip warm">👁 阅读 9.2W+</span>
+          <span class="stat-chip warm">🔥 CTR 11.2%</span>
+          <span class="stat-chip warm">🛒 GMV 160W+</span>
         </div>
       </div>
     </div>
 
-    <!-- XHS -->
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <span class="exp-date">2023.08 – 至今</span>
-        <h3 class="exp-org">小红书个人账号</h3>
+    <div class="exp-card reveal">
+      <div class="exp-left">
+        <span class="exp-period">2023.08 – 至今</span>
+        <h3 class="exp-org">小红书 · 虔诚的千岛酱</h3>
         <p class="exp-role">美食 / 旅游博主</p>
       </div>
       <div class="exp-body">
         <ul>
           <li>累计发布 70+ 篇内容，赞藏 2.8W+，单篇最高浏览 5W+</li>
-          <li>独立完成选题策划、内容拍摄、后期剪辑、封面设计全流程</li>
-          <li>熟悉小红书推荐算法，擅长标题优化与封面设计</li>
+          <li>独立完成选题策划 → 拍摄 → 剪辑 → 封面设计 → 数据分析全流程</li>
+          <li>擅长标题优化与封面设计，熟悉小红书推荐算法</li>
         </ul>
-        <div class="exp-kpis">
-          <span class="exp-kpi">📝 70+ 篇</span>
-          <span class="exp-kpi">❤️ 赞藏 2.8W+</span>
-          <span class="exp-kpi">👁 最高 5W+</span>
+        <div class="exp-stats">
+          <span class="stat-chip gold">📝 70+ 篇</span>
+          <span class="stat-chip gold">❤️ 赞藏 2.8W+</span>
+          <span class="stat-chip gold">👁 最高 5W+</span>
         </div>
       </div>
     </div>
 
-    <!-- NetEase -->
-    <div class="exp-item reveal">
-      <div class="exp-meta">
-        <span class="exp-date">2024.11 – 2025.01</span>
+    <div class="exp-card reveal">
+      <div class="exp-left">
+        <span class="exp-period">2024.11 – 2025.01</span>
         <h3 class="exp-org">网易青蝶计划</h3>
         <p class="exp-role">官方创作者</p>
       </div>
       <div class="exp-body">
         <ul>
           <li>输出原创软文 15 篇，单篇最高阅读 1.8W</li>
-          <li>获评"优秀学员"称号</li>
+          <li>获评"优秀学员" 🏆</li>
         </ul>
-        <div class="exp-kpis">
-          <span class="exp-kpi">✍️ 15 篇</span>
-          <span class="exp-kpi">🏆 优秀学员</span>
-          <span class="exp-kpi">👁 最高 1.8W</span>
+        <div class="exp-stats">
+          <span class="stat-chip green">✍️ 15 篇</span>
+          <span class="stat-chip green">🏆 优秀学员</span>
+          <span class="stat-chip green">👁 最高 1.8W</span>
         </div>
       </div>
     </div>
@@ -1199,275 +713,192 @@ body::after{
   </div>
 </section>
 
-<!-- ============================================================
-     PROJECTS
-     ============================================================ -->
+<!-- PROJECTS -->
 <section class="section" id="projects">
-  <div class="section-header reveal">
-    <span class="label">Projects</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">🚀 Projects</span>
     <h2 class="display">项目经历</h2>
-    <p>AIGC 工具的实际应用与独立项目落地 —— 这是区别于普通运营候选人的核心亮点。</p>
+    <p>AIGC × 运营 = 我的差异化武器 ⚡</p>
   </div>
-
-  <div class="projects-grid">
-
-    <div class="project-card featured reveal reveal-delay-1">
-      <span class="project-badge">🤖 AIGC 核心项目</span>
-      <h3>AI 辅助内容创作 · 傲慢与偏见文学展览</h3>
-      <p class="project-date">2026.05 – 至今</p>
-      <p>利用 Prompt Engineering 完成交互式 HTML 演示页面的设计与生成，实现传统 PPT 的网页化展示（全屏翻页、响应式、WebGL 动画）。</p>
-      <p>独立完成需求拆解、内容结构规划、Prompt 调优及页面效果迭代。</p>
-      <div class="project-stack">
-        <span>Claude Code</span><span>Cursor</span><span>Codex</span>
-        <span>Prompt Engineering</span><span>HTML/CSS/JS</span><span>Vercel</span>
+  <div class="proj-grid">
+    <div class="proj-card star reveal reveal-d1">
+      <span class="proj-badge">🤖 Vibecoding 代表作</span>
+      <h3>傲慢与偏见 · 文学展览网页</h3>
+      <p class="proj-date">2026.05 – 至今 · 个人项目</p>
+      <p>用 Prompt Engineering 把传统 PPT 变成交互式网页展览。全屏翻页、WebGL 背景动画、响应式布局，全程 AI 辅助生成 ✨</p>
+      <p>独立完成需求拆解 → 内容结构 → Prompt 调优 → 效果迭代，一个早八的快乐 vibecoding 🎉</p>
+      <div class="proj-stack">
+        <span>Claude Code</span><span>Cursor</span><span>Codex</span><span>Prompt Engineering</span><span>HTML/CSS/JS</span><span>Vercel</span>
       </div>
-      <div class="project-links">
-        <a href="https://pride-and-prejudice-ppt.vercel.app" target="_blank" rel="noopener" class="p-link">在线体验 <span class="arr">↗</span></a>
-        <a href="https://github.com/tianjiaoliu720/pride-and-prejudice-ppt" target="_blank" rel="noopener" class="p-link">GitHub <span class="arr">↗</span></a>
+      <div class="proj-links">
+        <a href="https://pride-and-prejudice-ppt.vercel.app" target="_blank" rel="noopener" class="proj-link">🔗 在线体验 <span class="arr">↗</span></a>
+        <a href="https://github.com/tianjiaoliu720/pride-and-prejudice-ppt" target="_blank" rel="noopener" class="proj-link">🐙 GitHub <span class="arr">↗</span></a>
       </div>
     </div>
-
-    <div class="project-card reveal reveal-delay-2">
-      <span class="project-badge">🌐 网页开发</span>
+    <div class="proj-card reveal reveal-d2">
+      <span class="proj-badge">🌐 网页开发</span>
       <h3>个人作品集网站</h3>
-      <p class="project-date">2026.06</p>
-      <p>使用 Claude Code 辅助生成完整的个人简历网站，包含响应式设计、滚动动画、数据可视化等现代 Web 特性。</p>
-      <p>借助 AI 工具实现从设计稿到代码的快速落地，展示了运营人员使用 AIGC 提效的能力。</p>
-      <div class="project-stack">
-        <span>Claude Code</span><span>HTML/CSS/JS</span>
-        <span>Responsive Design</span><span>Vercel</span>
+      <p class="proj-date">2026.06 · 个人项目</p>
+      <p>就是这个网站啦！用 Claude Code vibecoding，从设计稿到上线一气呵成 👩‍💻</p>
+      <p>响应式设计 + 滚动动画 + Bento 布局，展示了运营人用 AI 提效的无限可能～</p>
+      <div class="proj-stack">
+        <span>Claude Code</span><span>HTML/CSS/JS</span><span>Responsive</span><span>Vercel</span>
       </div>
-      <div class="project-links">
-        <a href="#" class="p-link">当前页面 <span class="arr">↗</span></a>
+      <div class="proj-links">
+        <a href="#" class="proj-link">🔗 就这个页面 <span class="arr">↗</span></a>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- ============================================================
-     CREATIVE WORKS
-     ============================================================ -->
-<div class="creative-wrapper">
+<!-- CREATIVE -->
+<div class="creative-strip">
 <section class="section" id="creative">
-  <div class="section-header reveal">
-    <span class="label">Creative Works</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">🎨 Creative Works</span>
     <h2 class="display">创意作品</h2>
-    <p>运营之外，我也持续输出设计、文案与摄影作品。</p>
+    <p>不止运营，还能设计、写文、拍照 📸</p>
   </div>
-
-  <div class="creative-grid">
-    <div class="creative-card reveal reveal-delay-1">
-      <div class="creative-icon" style="background:#FFF0E8">🎨</div>
+  <div class="creative-row">
+    <div class="c-card reveal reveal-d1">
+      <div class="c-icon-lg" style="background:var(--peach-light)">🎨</div>
       <h4>设计作品</h4>
-      <p>学生会 & 校团委活动海报设计<br>公众号推文排版与视觉设计<br>Canva / Photoshop / 秀米</p>
+      <p>学生会 & 校团委活动海报<br>公众号推文排版设计<br>Canva · PS · 秀米</p>
     </div>
-    <div class="creative-card reveal reveal-delay-2">
-      <div class="creative-icon" style="background:#E8F0FF">✍️</div>
+    <div class="c-card reveal reveal-d2">
+      <div class="c-icon-lg" style="background:var(--sky-light)">✍️</div>
       <h4>文案作品</h4>
       <p>微信公众号原创软文 15 篇<br>网易青蝶计划官方创作者<br>活动策划案 & 品牌文案</p>
     </div>
-    <div class="creative-card reveal reveal-delay-3">
-      <div class="creative-icon" style="background:#F0F5E8">📷</div>
+    <div class="c-card reveal reveal-d3">
+      <div class="c-icon-lg" style="background:var(--matcha-light)">📷</div>
       <h4>摄影作品</h4>
-      <p>美食 / 旅行 / 人像摄影<br>小红书内容视觉创作<br>独立后期 & 调色</p>
+      <p>美食 · 旅行 · 人像<br>小红书内容视觉创作<br>独立后期 & 调色</p>
     </div>
   </div>
 </section>
 </div>
 
-<!-- ============================================================
-     SKILLS
-     ============================================================ -->
+<!-- SKILLS -->
 <section class="section" id="skills">
-  <div class="section-header reveal">
-    <span class="label">Skills & Certs</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">🛠 Skills & Certs</span>
     <h2 class="display">技能与证书</h2>
-    <p>运营 × AIGC × 设计 × 分析，多维度技能组合。</p>
+    <p>运营 × AIGC × 设计 × 分析，多面手就是我 💪</p>
   </div>
-
   <div class="skills-grid">
-    <div class="skill-block reveal reveal-delay-1">
+    <div class="skill-box reveal reveal-d1">
       <div class="skill-emoji">📱</div>
       <h4>内容运营</h4>
-      <div class="chip-list">
-        <span class="chip">小红书后台分析</span>
-        <span class="chip">用户画像</span>
-        <span class="chip">内容策划</span>
-        <span class="chip">数据复盘</span>
-        <span class="chip">直播运营</span>
+      <div class="chips">
+        <span class="chip">小红书后台</span><span class="chip">用户画像</span><span class="chip">内容策划</span><span class="chip">数据复盘</span><span class="chip">直播运营</span>
       </div>
     </div>
-    <div class="skill-block reveal reveal-delay-2">
+    <div class="skill-box reveal reveal-d2">
       <div class="skill-emoji">🤖</div>
       <h4>AIGC 工具</h4>
-      <div class="chip-list">
-        <span class="chip">ChatGPT</span>
-        <span class="chip">Claude</span>
-        <span class="chip">Gemini</span>
-        <span class="chip">Claude Code</span>
-        <span class="chip">Cursor</span>
-        <span class="chip">Codex</span>
-        <span class="chip">Prompt Engineering</span>
+      <div class="chips">
+        <span class="chip">ChatGPT</span><span class="chip">Claude</span><span class="chip">Gemini</span><span class="chip">Claude Code</span><span class="chip">Cursor</span><span class="chip">Codex</span><span class="chip">Prompt Eng.</span>
       </div>
     </div>
-    <div class="skill-block reveal reveal-delay-3">
+    <div class="skill-box reveal reveal-d3">
       <div class="skill-emoji">🎨</div>
       <h4>设计与剪辑</h4>
-      <div class="chip-list">
-        <span class="chip">Canva</span>
-        <span class="chip">Photoshop</span>
-        <span class="chip">Premiere Pro</span>
-        <span class="chip">剪映</span>
-        <span class="chip">秀米</span>
+      <div class="chips">
+        <span class="chip">Canva</span><span class="chip">Photoshop</span><span class="chip">Pr</span><span class="chip">剪映</span><span class="chip">秀米</span>
       </div>
     </div>
-    <div class="skill-block reveal reveal-delay-4">
+    <div class="skill-box reveal reveal-d4">
       <div class="skill-emoji">📊</div>
       <h4>办公与分析</h4>
-      <div class="chip-list">
-        <span class="chip">Office</span>
-        <span class="chip">Excel</span>
-        <span class="chip">Xmind</span>
-        <span class="chip">基础 Python</span>
+      <div class="chips">
+        <span class="chip">Office</span><span class="chip">Excel</span><span class="chip">Xmind</span><span class="chip">Python基础</span>
       </div>
     </div>
   </div>
-
-  <div class="certs-row reveal">
-    <span class="cert-pill"><span class="ci">🌐</span> CET-6</span>
-    <span class="cert-pill"><span class="ci">💻</span> 全国计算机二级</span>
-    <span class="cert-pill"><span class="ci">🎤</span> 普通话二甲</span>
+  <div class="cert-row reveal">
+    <span class="cert"><span class="ci">🌐</span> CET-6</span>
+    <span class="cert"><span class="ci">💻</span> 全国计算机二级</span>
+    <span class="cert"><span class="ci">🎤</span> 普通话二甲</span>
   </div>
 </section>
 
-<!-- ============================================================
-     CONTACT
-     ============================================================ -->
+<!-- CONTACT -->
 <section class="section" id="contact">
-  <div class="section-header reveal">
-    <span class="label">Contact</span>
+  <div class="section-head reveal">
+    <span class="eyebrow">💌 Say Hi</span>
     <h2 class="display">联系我</h2>
-    <p>开放实习机会，期待与你交流。</p>
+    <p>开放实习机会，期待与你相遇 💫</p>
   </div>
-
   <div class="contact-grid">
-    <div class="reveal reveal-delay-1">
+    <div class="reveal reveal-d1">
       <div class="contact-list">
         <a href="mailto:liutianjiao.mary@foxmail.com" class="c-item">
-          <div class="c-icon" style="background:#FFF0E8">📧</div>
-          <div>
-            <div class="c-label">邮箱</div>
-            <div class="c-value">liutianjiao.mary@foxmail.com</div>
-          </div>
+          <div class="c-icon" style="background:var(--peach-light)">📧</div>
+          <div><div class="c-label">邮箱</div><div class="c-value">liutianjiao.mary@foxmail.com</div></div>
         </a>
         <a href="tel:13512048777" class="c-item">
-          <div class="c-icon" style="background:#E8F4FF">📞</div>
-          <div>
-            <div class="c-label">电话</div>
-            <div class="c-value">135 1204 8777</div>
-          </div>
+          <div class="c-icon" style="background:var(--sky-light)">📞</div>
+          <div><div class="c-label">电话</div><div class="c-value">135 1204 8777</div></div>
         </a>
         <div class="c-item">
-          <div class="c-icon" style="background:#E8FDF0">💬</div>
-          <div>
-            <div class="c-label">微信</div>
-            <div class="c-value">ltjsmnbjsrhfb <span style="font-size:0.72rem;color:var(--stone);font-weight:400">（添加请备注）</span></div>
-          </div>
+          <div class="c-icon" style="background:var(--matcha-light)">💬</div>
+          <div><div class="c-label">微信</div><div class="c-value">ltjsmnbjsrhfb <span style="font-size:0.7rem;color:var(--stone);font-weight:400">（备注来意～）</span></div></div>
         </div>
-        <a href="https://xshlink.com/m/1aiQTJIFQ8z" target="_blank" rel="noopener" class="c-item">
-          <div class="c-icon" style="background:#FFE8EF">📕</div>
-          <div>
-            <div class="c-label">小红书</div>
-            <div class="c-value">个人账号主页 →</div>
-          </div>
+        <a href="https://www.xiaohongshu.com/user/profile/64020ef8000000001002b0b4" target="_blank" rel="noopener" class="c-item">
+          <div class="c-icon" style="background:#FFE8EE">📕</div>
+          <div><div class="c-label">小红书</div><div class="c-value">@虔诚的千岛酱 →</div></div>
         </a>
         <a href="https://pride-and-prejudice-ppt.vercel.app" target="_blank" rel="noopener" class="c-item">
           <div class="c-icon" style="background:#F0E8FF">🌐</div>
-          <div>
-            <div class="c-label">项目展示</div>
-            <div class="c-value">傲慢与偏见 PPT 网页 →</div>
-          </div>
+          <div><div class="c-label">项目链接</div><div class="c-value">傲慢与偏见 PPT 网页 →</div></div>
         </a>
       </div>
-      <div class="social-links">
-        <a href="https://xshlink.com/m/1aiQTJIFQ8z" target="_blank" rel="noopener" class="social-pill">📕 小红书</a>
-        <a href="https://github.com/tianjiaoliu720" target="_blank" rel="noopener" class="social-pill">💻 GitHub</a>
+      <div class="social-row">
+        <a href="https://www.xiaohongshu.com/user/profile/64020ef8000000001002b0b4" target="_blank" rel="noopener" class="social-pill">📕 小红书</a>
+        <a href="https://github.com/tianjiaoliu720" target="_blank" rel="noopener" class="social-pill">🐙 GitHub</a>
       </div>
     </div>
-
-    <div class="c-form reveal reveal-delay-2">
-      <h3>发送消息</h3>
+    <div class="contact-form reveal reveal-d2">
+      <h3>✉️ 发个消息</h3>
       <form action="#" method="POST">
-        <div class="field">
-          <label for="name">姓名</label>
-          <input type="text" id="name" name="name" placeholder="你的名字" required>
-        </div>
-        <div class="field">
-          <label for="email">邮箱</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="field">
-          <label for="msg">留言</label>
-          <textarea id="msg" name="message" placeholder="期待与你交流..." required></textarea>
-        </div>
-        <button type="submit" class="submit-btn">发送消息</button>
+        <div class="field"><label for="name">姓名</label><input type="text" id="name" name="name" placeholder="你的名字" required></div>
+        <div class="field"><label for="email">邮箱</label><input type="email" id="email" name="email" placeholder="your@email.com" required></div>
+        <div class="field"><label for="msg">留言</label><textarea id="msg" name="message" placeholder="嗨！看到你的作品集…" required></textarea></div>
+        <button type="submit" class="submit">发送消息 ✨</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 刘天骄 · 个人作品集</p>
-  <p>最后更新：2026 年 6 月 · 北京</p>
+  <div class="vibe-badge">🤖 vibecoded with Claude Code + love 💛</div>
+  <p>© 2026 刘天骄 · 虔诚的千岛酱 · 个人作品集</p>
+  <p>最后更新：2026 年 6 月 · 北京 · Made with lots of ☕</p>
 </footer>
 
-<!-- ============================================================
-     SCRIPTS
-     ============================================================ -->
 <script>
-// ── Mobile nav ──────────────────────────────────────────────
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
-navToggle.addEventListener('click',()=>{
-  navLinks.classList.toggle('open');
-  navToggle.classList.toggle('open');
-});
-navLinks.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>{
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
-});
+// Mobile nav
+const navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');navToggle.classList.toggle('open')});
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');navToggle.classList.remove('open')}));
 
-// ── Nav scroll shadow & active link ─────────────────────────
-const nav = document.getElementById('nav');
-const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('[data-nav]');
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)});
 
+// Active link
+const sections=document.querySelectorAll('section[id]'),anchors=document.querySelectorAll('[data-nav]');
 window.addEventListener('scroll',()=>{
-  nav.classList.toggle('scrolled',window.scrollY>20);
-
-  let current='';
-  sections.forEach(s=>{
-    if(window.scrollY>=s.offsetTop-120) current=s.getAttribute('id');
-  });
-  navAnchors.forEach(a=>{
-    a.classList.toggle('active',a.getAttribute('data-nav')===current);
-  });
+  let c='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-140)c=s.getAttribute('id')});
+  anchors.forEach(a=>a.classList.toggle('active',a.getAttribute('data-nav')===c));
 });
 
-// ── Scroll reveal ───────────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting) e.target.classList.add('visible');
-  });
-},{threshold:0.08,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+// Reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -28px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
-
 </body>
 </html>
